@@ -11,7 +11,7 @@ from mininet.log import setLogLevel, info
 from mininet.cli import CLI
 
 
-class StaticTopo(Topo):
+class MultipathTopo(Topo):
     def build(self):
         h1 = self.addHost('h1')
         h2 = self.addHost('h2')
@@ -35,7 +35,7 @@ class StaticTopo(Topo):
 
 def perfTest():
     "Create network and run simple performance test"
-    topo = StaticTopo()
+    topo = MultipathTopo()
     net = Mininet( topo=topo, link=TCLink)
 
     net.start()
